@@ -1,0 +1,365 @@
+.stock-dashboard {
+    padding: 20px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.dashboard-header h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.dashboard-header p {
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+/* Statistics Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+    font-size: 3rem;
+    margin-right: 15px;
+    opacity: 0.8;
+}
+
+.stat-info h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.stat-info p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.stat-card.total-products {
+    border-left: 4px solid #007bff;
+}
+
+.stat-card.low-stock {
+    border-left: 4px solid #ffc107;
+}
+
+.stat-card.out-of-stock {
+    border-left: 4px solid #dc3545;
+}
+
+.stat-card.alerts {
+    border-left: 4px solid #fd7e14;
+}
+
+.stat-card.locations {
+    border-left: 4px solid #28a745;
+}
+
+/* Alerts Section */
+.alerts-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.alerts-section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alerts-section h2:before {
+    content: "🚨";
+    font-size: 1.5rem;
+}
+
+.alerts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.alert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+    background: #fff9e6;
+    transition: transform 0.2s ease;
+}
+
+.alert-item:hover {
+    transform: translateX(5px);
+}
+
+.alert-item.severity-critical {
+    border-left-color: #dc3545;
+    background: #ffebee;
+}
+
+.alert-item.severity-high {
+    border-left-color: #fd7e14;
+    background: #fff3e0;
+}
+
+.alert-item.severity-medium {
+    border-left-color: #ffc107;
+    background: #fff9e6;
+}
+
+.alert-item.severity-low {
+    border-left-color: #20c997;
+    background: #e8f5e8;
+}
+
+.alert-content {
+    flex: 1;
+}
+
+.alert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.alert-type {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 0.85rem;
+}
+
+.severity-badge {
+    padding: 2px 8px;
+    border-radius: 12px;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.alert-message {
+    color: #495057;
+    margin: 8px 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.alert-details {
+    display: flex;
+    gap: 15px;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.mark-read-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.mark-read-btn:hover {
+    background: #218838;
+}
+
+/* Recent Movements */
+.movements-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.movements-section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.movements-section h2:before {
+    content: "📊";
+    font-size: 1.5rem;
+}
+
+.movements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.movement-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    transition: background-color 0.3s ease;
+}
+
+.movement-item:hover {
+    background: #e9ecef;
+}
+
+.movement-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.movement-details {
+    flex: 1;
+}
+
+.movement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.movement-header strong {
+    color: #2c3e50;
+}
+
+.movement-type {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+}
+
+.movement-type.inbound {
+    background-color: #28a745;
+}
+
+.movement-type.outbound {
+    background-color: #dc3545;
+}
+
+.movement-type.transfer {
+    background-color: #007bff;
+}
+
+.movement-type.damaged {
+    background-color: #fd7e14;
+}
+
+.movement-type.returned {
+    background-color: #20c997;
+}
+
+.movement-type.adjustment {
+    background-color: #6f42c1;
+}
+
+.movement-info {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.movement-reason {
+    font-style: italic;
+    color: #495057;
+    margin: 5px 0 0 0;
+    font-size: 0.85rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stock-dashboard {
+        padding: 15px;
+    }
+    
+    .dashboard-header h1 {
+        font-size: 2rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .stat-card {
+        padding: 20px 15px;
+    }
+    
+    .stat-icon {
+        font-size: 2.5rem;
+    }
+    
+    .alerts-section, .movements-section {
+        padding: 20px 15px;
+    }
+    
+    .alert-details, .movement-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .movement-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
